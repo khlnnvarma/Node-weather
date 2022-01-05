@@ -1,9 +1,10 @@
-const express = require('express');
+const express = require('express')
 const path = require('path');
 const geolocation = require('./utils/Geolocation');
 const WeatherDetails = require('./utils/WeatherDetails')
 
 const app = express();
+const port = process.env.PORT || 3000
 
 const publicDirectoryPath = path.join(__dirname,'../public');
 
@@ -64,6 +65,6 @@ app.get('/weather',(req,resp)=>{
 })
 
 
-app.listen(3000,() => {
+app.listen(port,() => {
     console.log("app server started");
 })
